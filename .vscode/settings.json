@@ -28,6 +28,15 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "typeinfo": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "xiosbase": "cpp",
+        "set": "cpp",
+        "xtree": "cpp",
+        "stack": "cpp",
+        "xstring": "cpp",
+        "string": "cpp",
+        "map": "cpp",
+        "queue": "cpp"
     }
 }

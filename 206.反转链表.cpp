@@ -59,17 +59,25 @@ using namespace std;
 // };
 class Solution {
 public:
+    // ListNode* reverseList(ListNode* head) {
+    //     ListNode* cur=head;
+    //     ListNode* pre=NULL;
+    //     ListNode* temp;
+    //     while(cur!=NULL){
+    //         temp = cur->next;
+    //         cur->next=pre;
+    //         pre=cur;
+    //         cur=temp;
+    //     }
+    //     return pre;
+    // }
     ListNode* reverseList(ListNode* head) {
-        ListNode* cur=head;
-        ListNode* pre=NULL;
-        ListNode* temp;
-        while(cur!=NULL){
-            temp = cur->next;
-            cur->next=pre;
-            pre=cur;
-            cur=temp;
-        }
-        return pre;
+        if(head==NULL)return head;
+        if(head->next==NULL)return head;
+        ListNode* last = reverseList(head->next);
+        head->next->next = head;
+        head->next = NULL;
+        return last;
     }
 };
 // @lc code=end
