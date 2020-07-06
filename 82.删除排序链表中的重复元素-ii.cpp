@@ -21,35 +21,62 @@ using namespace std;
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-        ListNode *ans=new ListNode(0);
-        ListNode *q = ans;
-        ListNode *p=head;
-        int flag=0;
-        while(p!=NULL)
+        ListNode* pcur = new ListNode(0);
+        pcur->next = head;
+        head = pcur;
+        ListNode *L, *R;
+        while (pcur->next != NULL)
         {
-            if(p->next!=NULL){
-                if(p->val == p->next->val)
+            L = pcur->next;
+            R = pcur->next;
+            while(R->next && R->next->val==L->val){
+                R = R->next;
+            }
+            if(L==R)pcur = pcur->next;
+            else{
+                pcur->next = R->next;
+                while (L!=R)
                 {
-                    p = p->next;
-                    flag = 1;
-                }else{
-                    if(flag == 0){
-                        q->next = new ListNode(p->val);
-                        q = q->next;;                    
-                    }
-                    p = p->next;
-                    flag = 0;
-                    }
-            }else{
-                if(flag==0)
-                {
-                    q->next = new ListNode(p->val);
-                    q = q->next;
+                    ListNode* tmp = L;
+                    L = L->next;
+                    delete tmp;
                 }
-                p = p->next;
-            }      
+                delete L;
+                
+            }
         }
-        return ans->next;
+        return head->next;        
     }
+    // ListNode* deleteDuplicates(ListNode* head) {
+    //     ListNode *ans=new ListNode(0);
+    //     ListNode *q = ans;
+    //     ListNode *p=head;
+    //     int flag=0;
+    //     while(p!=NULL)
+    //     {
+    //         if(p->next!=NULL){
+    //             if(p->val == p->next->val)
+    //             {
+    //                 p = p->next;
+    //                 flag = 1;
+    //             }else{
+    //                 if(flag == 0){
+    //                     q->next = new ListNode(p->val);
+    //                     q = q->next;;                    
+    //                 }
+    //                 p = p->next;
+    //                 flag = 0;
+    //                 }
+    //         }else{
+    //             if(flag==0)
+    //             {
+    //                 q->next = new ListNode(p->val);
+    //                 q = q->next;
+    //             }
+    //             p = p->next;
+    //         }      
+    //     }
+    //     return ans->next;
+    // }
 };
 // @lc code=end
