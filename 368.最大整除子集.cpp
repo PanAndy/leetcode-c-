@@ -1,3 +1,11 @@
+// @before-stub-for-debug-begin
+#include <vector>
+#include <string>
+#include "commoncppproblem368.h"
+
+using namespace std;
+// @before-stub-for-debug-end
+
 /*
  * @lc app=leetcode.cn id=368 lang=cpp
  *
@@ -49,7 +57,7 @@ public:
         {
             ans.push_back(nums[ind]);
         }
-
+        return ans;
 
     }
     // vector<int> largestDivisibleSubset(vector<int>& nums) {

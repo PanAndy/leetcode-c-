@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:/Program Files (x86)/CodeBlocks/MinGW/lib/**"
+                "D:/Program Files (x86)/CodeBlocks/MinGW/lib/**",
+                "D:/Program Files (x86)/CodeBlocks/MinGW/include"
             ],
             "defines": [
                 "_DEBUG",
